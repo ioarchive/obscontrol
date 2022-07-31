@@ -1,4 +1,6 @@
-﻿# OBSControl
+doesnt work cause eac rip bozo
+
+# OBSControl
 
 A mod for controlling OBS Studio from inside VRChat.\
 somewhat ported from a [beat saber mod](https://github.com/Zingabopp/OBSControl) version
