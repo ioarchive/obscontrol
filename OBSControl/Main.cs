@@ -1,6 +1,8 @@
 ﻿using System;
 using ABI.CCK.Components;
 using ABI_RC.Core.Base;
+using ABI_RC.Core.IO;
+using ABI_RC.Core.Networking;
 using ABI_RC.Core.Networking.IO.Instancing;
 using ABI_RC.Core.UI;
 using MelonLoader;
@@ -29,9 +31,9 @@ public class Main : MelonMod
     {
         Logger.Logs = LoggerInstance;
         InitPrefs();
-        
+
         HarmonyInstance.Patch(
-            typeof(Content).GetMethod(nameof(Content.LoadIntoWorld)), null,
+            typeof(CVRObjectLoader).GetMethod(nameof(CVRObjectLoader.InitiateLoadIntoWorld)), null,
             typeof(World).GetMethod(nameof(World.WorldJoin)).ToNewHarmonyMethod());
         HarmonyInstance.Patch(
             typeof(CVRWorld).GetMethod("OnDestroy"), null,
